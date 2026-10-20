@@ -1,0 +1,10 @@
+import { readFileSync } from 'node:fs';
+import { solve } from './domain.mjs';
+const text = readFileSync(process.argv[2] || 'input.tsv', 'utf8').replaceAll('\r', '').trimEnd();
+const [header, ...rows] = text.split('\n');
+if (header !== "time\tcost") throw new Error('Cabeçalho inválido');
+const data = rows.filter(Boolean).map(row => row.split('\t').map(value => {
+  if (!/^-?\d+$/.test(value)) throw new Error('Inteiro inválido');
+  return Number(value);
+}));
+console.log(JSON.stringify(solve(data)));

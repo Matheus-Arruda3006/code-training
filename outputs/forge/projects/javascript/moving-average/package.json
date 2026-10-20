@@ -1,0 +1,9 @@
+{
+  "name": "moving-average",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test domain.test.mjs",
+    "start": "node main.mjs"
+  }
+}

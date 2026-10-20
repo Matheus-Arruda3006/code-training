@@ -1,0 +1,14 @@
+{
+  "name": "worker-scheduler",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "test": "tsc && node --test dist/domain.test.js",
+    "start": "node dist/main.js"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "@types/node": "22.19.19"
+  }
+}

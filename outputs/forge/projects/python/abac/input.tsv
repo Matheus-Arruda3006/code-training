@@ -1,0 +1,4 @@
+actor_team	resource_team	amount	approval_limit	suspended
+1	1	100	100	0
+1	2	1	100	0
+1	1	10	100	1

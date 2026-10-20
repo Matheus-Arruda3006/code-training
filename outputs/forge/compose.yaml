@@ -1,0 +1,12 @@
+services:
+  api:
+    build: ./backend
+    ports: ["127.0.0.1:8000:8000"]
+    environment:
+      APP_ENV: local
+      APP_DEBUG: "false"
+      FRONTEND_ORIGINS: http://localhost:5173,http://127.0.0.1:5173
+    volumes:
+      - forge-data:/app/storage
+volumes:
+  forge-data:

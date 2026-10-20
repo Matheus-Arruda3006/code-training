@@ -1,0 +1,16 @@
+import java.util.*;
+public class Tests {
+  static void check(long[][] input,long[] expected){
+    try { var actual=Domain.solve(input); if(expected==null || !Arrays.equals(actual,expected))throw new AssertionError("Resultado inesperado"); }
+    catch(IllegalArgumentException error){ if(expected!=null)throw error; }
+  }
+  public static void main(String[] args){
+    check(new long[][] { {10000,1000,1000,800},{100,200,500,100} },new long[] {800,0});
+    check(new long[][] { {999,0,1000,1000} },new long[] {99});
+    check(new long[][] {  },new long[] {});
+    check(new long[][] { {-1,0,0,0} },null);
+    check(new long[][]{new long[0]},null);
+    check(new long[201][4],null);
+    System.out.println("Todos os casos passaram.");
+  }
+}
